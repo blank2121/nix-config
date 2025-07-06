@@ -10,6 +10,10 @@
 with lib;
 
 let
+    vol-up = pkgs.callPackage ../../../scripts/audio-increase {};
+    vol-down = pkgs.callPackage ../../../scripts/audio-decrease {};
+    bright-up = pkgs.callPackage ../../../scripts/brightness-increase {};
+    bright-down = pkgs.callPackage ../../../scripts/brightness-decrease {};
     cfg = config.my.desktops.extras.waybar;
 in {
   options = {
@@ -187,8 +191,8 @@ in {
                               ""
                               ""
                       ];
-                      on-scroll-up = "brightnessctl set 1%+";
-                      on-scroll-down = "brightnessctl set 1%-";
+                      on-scroll-up = bright-up;
+                      on-scroll-down = bright-down;
                       min-length = 6;
                   };
 
@@ -216,8 +220,8 @@ in {
                       format-muted = "停";
                       on-click = "${pkgs.alsa-utils}/bin/amixer -D pipewire sset Master toggle";
                       on-click-middle = "${pkgs.alsa-utils}/bin/amixer -D pipewire sset Master toggle";
-                      on-scroll-up = "${pkgs.alsa-utils}/bin/amixer -D pipewire sset Master 5%+";
-                      on-scroll-down = "${pkgs.alsa-utils}/bin/amixer -D pipewire sset Master 5%-";
+                      on-scroll-up = vol-up;
+                      on-scroll-down = vol-down;
                       tooltip-format = "{icon} {desc} // {volume}%";
                       scroll-step = 5;
                       "format-icons" = {

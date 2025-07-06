@@ -45,7 +45,10 @@ in
                       cfg.screen
                       "HDMI-A-1,prefered,auto,1,mirror,eDP-2"
                   ];
-                  exec-once = [];
+                  exec-once = [
+                    "swww-daemon"
+                    "waybar"
+                  ];
                   env = [
                       "XCURSOR_SIZE,24"
                       "GDK_SCALE,auto"

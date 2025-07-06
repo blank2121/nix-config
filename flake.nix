@@ -13,6 +13,15 @@
                     niri.overlays.niri polymc.overlay
                 ];
             };
+        globalModules = [ 
+            niri.nixosModules.niri
+            stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager = { backupFileExtension = "backup"; };
+            }
+        ];
     in { 
         nixosConfigurations = {
             ROG = nixpkgs.lib.nixosSystem {
@@ -23,15 +32,8 @@
 
                 modules = [
                     ./hosts/ROG
-                    niri.nixosModules.niri
                     nixos-hardware.nixosModules.asus-zephyrus-ga402x-amdgpu
-                    stylix.nixosModules.stylix
-                    home-manager.nixosModules.home-manager {
-                      home-manager.useGlobalPkgs = true;
-                      home-manager.useUserPackages = true;
-                      home-manager = { backupFileExtension = "backup"; };
-                    }
-                ];
+                ] ++ globalModules;
             };
         };
 
@@ -51,6 +53,7 @@
         nixvim.url = "github:blank2121/nixvim";
         polymc.url = "github:PolyMC/PolyMC";
         stylix.url = "github:danth/stylix";
-        zen-browser.url = "github:0xc000022070/zen-browser-flake";
+        zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+        zen-browser.url = "github:youwen5/zen-browser-flake";
     };
 }

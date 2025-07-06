@@ -25,8 +25,19 @@ let
       program = "${pkgsForSys.${name}}";
     })
   ) perSystemPackages;
+  
+  # --- formatter ---
+  forAllSystems = lib.genAttrs systems;
+
+  formatter = forAllSystems (
+    system: let
+        pkgs = (import <nixpkgs> {}).legacyPackages.${system};
+    in
+        pkgs.alejandra
+  );
 
 in {
+  inherit formatter;
   packages = perSystemPackages;
   apps = perSystemApps;
 }

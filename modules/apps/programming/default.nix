@@ -42,7 +42,6 @@ in {
             haskellPackages.haskell-language-server
             haskellPackages.stack
             hplip
-            jj
             jq
             julia
             # mark

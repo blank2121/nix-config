@@ -13,14 +13,15 @@
 
         desktops = {
             login.ly.enable = true;
-            niri.enable = false;
-	        hyprland.enable = true;
+            niri.enable = true;
+	        hyprland.enable = false;
 
             extras = {
+                swaylock.enable = true;
+                swaync.enable = true;
                 waybar.enable = true;
                 wlogout.enable = true;
-                swaync.enable = true;
-                swaylock.enable = true;
+                xremap.enable = true;
             };
         };
 
@@ -45,6 +46,6 @@
 
         # info from flake.nix is enough to create user
 
-        style.kanagawa.enable = true;
+        style.coffee.enable = true;
     };
 }

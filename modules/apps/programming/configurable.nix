@@ -13,6 +13,7 @@ let
     cfg = config.my.apps.programming;
 in {
     config = mkIf cfg.enable {
+
         home-manager.users.${username} = {
           # git
           programs.git = {
@@ -41,12 +42,14 @@ in {
           #   ];
           # };
 
+          # jujutsu
+          programs.jujutsu.enable = true;
+
           # pass-store
           home.packages = [ pkgs.pass ];
           programs.password-store.enable = true; 
 
           # zellij
-          # TODO: fix this for zellij config
           programs.zellij = {
             enable = true;
             enableZshIntegration = true;
@@ -54,7 +57,7 @@ in {
           home.file = {
             ".config/zellij/" = {
                 recursive = true;
-                source = "/home/${username}/nix/nixcfg/dotfiles/zellij";
+                source = builtins.toString ./zellij-files;
             };
           };
 
