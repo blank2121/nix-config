@@ -46,7 +46,7 @@ in {
           programs.jujutsu.enable = true;
 
           # pass-store
-          home.packages = [ pkgs.pass ];
+          home.packages = with pkgs; [ pass jjui jj-fzf ];
           programs.password-store.enable = true; 
 
           # zellij

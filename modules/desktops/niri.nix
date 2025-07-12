@@ -9,11 +9,6 @@
 with lib;
 
 let
-    vol-up = pkgs.callPackage ../../scripts/audio-increase {};
-    vol-down = pkgs.callPackage ../../scripts/audio-decrease {};
-    bright-up = pkgs.callPackage ../../scripts/brightness-increase {};
-    bright-down = pkgs.callPackage ../../scripts/brightness-decrease {};
-    screenshot = pkgs.callPackage ../../scripts/screenshot {};
     cfg = config.my.desktops.niri;
 in {
   options = {
@@ -46,6 +41,7 @@ in {
                   spawn-at-startup = [
                     { command = [ "swww-daemon" ]; }
                     { command = [ "waybar" ]; }
+                    { command = [ "xremap" "~/.config/xremap/config.yaml" "--device" "/dev/input/event2" "--device" "/dev/input/event3" ]; }
                   ];
                   input = {
                       keyboard.xkb = {
@@ -98,7 +94,6 @@ in {
                       "${mod}+Space".action = spawn "${pkgs.wofi}/bin/wofi" "--show" "drun" "-Ibm" "-W" "576";
                       "${mod}+V".action = toggle-window-floating;
                       "Ctrl+Shift+P".action = spawn "${pkgs.wofi-pass}/bin/wofi-pass";
-                      "Ctrl+Shift+S".action = spawn "${screenshot}";
 
 # movement
                       "${mod}+H".action = focus-column-left;

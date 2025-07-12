@@ -5,6 +5,6 @@
     ./swaync.nix
     ./waybar.nix
     ./wlogout.nix
-    # ./swhkd
+    ./xremap
   ];
 }

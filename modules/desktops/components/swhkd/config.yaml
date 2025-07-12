@@ -1,6 +1,0 @@
-modmap:
-  - name: caps escape
-    remap:
-      CapsLock: esc
-    application:
-      only: [kitty]

@@ -30,6 +30,8 @@ in {
             bat
             btop
             btrfs-progs
+            du-dust
+            dua
             fd
             fzf
             gcc

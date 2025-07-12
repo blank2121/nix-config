@@ -12,8 +12,7 @@
                 overlays = [
                     niri.overlays.niri polymc.overlay
                 ];
-            };
-        globalModules = [ 
+            }; globalModules = [ 
             niri.nixosModules.niri
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager {

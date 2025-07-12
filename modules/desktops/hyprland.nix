@@ -48,6 +48,7 @@ in
                   exec-once = [
                     "swww-daemon"
                     "waybar"
+                    "xremap ~/.config/xremap/config.yaml --device /dev/input/event2 --device /dev/input/event3"
                   ];
                   env = [
                       "XCURSOR_SIZE,24"
@@ -132,16 +133,7 @@ in
 
                   "$mainMod" = "ALT";
 
-                  # TODO: remove these and add it to sxkhd
-                  binde = [
-                      ",xf86audioraisevolume, exec, ${vol-up}/bin/audio-increase"
-                      ",xf86audiolowervolume, exec, ${vol-down}/bin/audio-decrease"
-                      ",xf86monbrightnessup, exec, ${bright-up}/bin/brightness-increase"
-                      ",xf86monbrightnessdown, exec, ${bright-down}/bin/brightness-decrease"
-                  ];
-
                   bind = [
-                      "CTRL SHIFT, S, exec, ${screenshot}/bin/screenshot"
                       "CTRL SHIFT, P, exec, ${pkgs.wofi-pass}/bin/wofi-pass"
                       "$mainMod, M, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
                       "$mainMod, RETURN, exec, ${pkgs.kitty}/bin/kitty" 
