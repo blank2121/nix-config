@@ -10,6 +10,7 @@
         ./obsidian.nix
         ./photo.nix
         ./programming
+        # ./gaming
         ./spotify.nix
         ./terminal.nix
         ./zen.nix

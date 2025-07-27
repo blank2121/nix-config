@@ -23,31 +23,9 @@ in {
           };
           programs.lazygit.enable = true;
 
-          # gpg
-          # TODO: add to encryption section
-          # services.gpg-agent = {
-          #   enable = true;
-          #   pinentryPackage = pkgs.pinentry-curses;
-          #   enableExtraSocket = true;
-          #   enableSshSupport = true;
-          # };
-          #
-          # programs.gpg = {
-          #   enable = true;
-          #   publicKeys = [
-          #     {
-          #       source = "/home/${username}/nixcfg/gpg-key/subkey.pub";
-          #       trust = 5;
-          #     }
-          #   ];
-          # };
-
           # jujutsu
           programs.jujutsu.enable = true;
-
-          # pass-store
-          home.packages = with pkgs; [ pass jjui jj-fzf ];
-          programs.password-store.enable = true; 
+          home.packages = with pkgs; [ jjui jj-fzf ];
 
           # zellij
           programs.zellij = {

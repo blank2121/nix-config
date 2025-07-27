@@ -93,7 +93,6 @@ in {
                       "${mod}+Shift+Q".action = close-window;
                       "${mod}+Space".action = spawn "${pkgs.wofi}/bin/wofi" "--show" "drun" "-Ibm" "-W" "576";
                       "${mod}+V".action = toggle-window-floating;
-                      "Ctrl+Shift+P".action = spawn "${pkgs.wofi-pass}/bin/wofi-pass";
 
 # movement
                       "${mod}+H".action = focus-column-left;

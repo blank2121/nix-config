@@ -3,6 +3,9 @@
 
     imports = [ ../../modules ./hardware.nix ];
 
+    # remove after rutgers
+    # security.pki.certificateFiles = [ /home/winston/Downloads/usertrustrsacertificationauthority.cer ];
+
     my = {
         system = {
             bluetooth.enable = true;
@@ -32,7 +35,7 @@
 
             discord.enable = true;
             email.enable = true;
-            godot.enable = false;
+            godot.enable = true;
             krita.enable = true;
             libre.enable = true;
             mpv.enable = true;
@@ -46,6 +49,6 @@
 
         # info from flake.nix is enough to create user
 
-        style.coffee.enable = true;
+        style.rose-pine.enable = true;
     };
 }

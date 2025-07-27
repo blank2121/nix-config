@@ -134,7 +134,6 @@ in
                   "$mainMod" = "ALT";
 
                   bind = [
-                      "CTRL SHIFT, P, exec, ${pkgs.wofi-pass}/bin/wofi-pass"
                       "$mainMod, M, exec, ${pkgs.swaynotificationcenter}/bin/swaync-client -t"
                       "$mainMod, RETURN, exec, ${pkgs.kitty}/bin/kitty" 
                       "$mainMod SHIFT, Q, killactive, "
