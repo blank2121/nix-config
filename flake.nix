@@ -12,7 +12,9 @@
                 overlays = [
                     niri.overlays.niri polymc.overlay
                 ];
-            }; globalModules = [ 
+            }; 
+        globalModules = [ 
+            copyparty.nixosModules.default
             niri.nixosModules.niri
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager {
@@ -41,6 +43,7 @@
 
 
     inputs = {
+        copyparty.url = "github:9001/copyparty";
         determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
         home-manager = {
             url = "github:nix-community/home-manager/master";

@@ -24,7 +24,19 @@ in {
           programs.lazygit.enable = true;
 
           # jujutsu
-          programs.jujutsu.enable = true;
+          programs.jujutsu = {
+            enable = true;
+            settings = {
+                ui = {
+                    default-command = ["log" "--no-pager"];
+                    diff-formatter = "${pkgs.delta}/bin/delta";
+                };
+                merge-tools.delta.diff-args = ["$left" "$right"];
+
+                snapshot.max-new-file-size = "10MiB";
+            };
+          }; 
+
           home.packages = with pkgs; [ jjui jj-fzf ];
 
           # zellij
@@ -40,7 +52,12 @@ in {
           };
 
           # other general clis
-          programs = {
+          programs = { 
+            carapace = {
+                enable = true;
+                enableZshIntegration = true;
+            };
+
             eza = {
               enable = true;
               icons = "auto";

@@ -14,6 +14,7 @@ let
 in {
     imports = [
         ./configurable.nix
+        ./copyparty
         ./editors.nix
         ./sh.nix
     ];
@@ -24,8 +25,6 @@ in {
         home-manager.users.${username} = {
           # configureless CLIS with home-manager
           home.packages = with pkgs; [
-            # ntfy
-            # ansel
             bacon
             bat
             btop
@@ -62,6 +61,7 @@ in {
             which
             
             cargo
+            rustup
             clippy
             rustfmt
             rust-analyzer
