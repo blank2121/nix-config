@@ -10,7 +10,7 @@
                 nix.package = pkgs.nixVersions.unstable;
                 nix.settings.experimental-features = "nix-command flakes";
                 overlays = [
-                    niri.overlays.niri polymc.overlay
+                    niri.overlays.niri polymc.overlay copyparty.overlays.default
                 ];
             }; 
         globalModules = [ 

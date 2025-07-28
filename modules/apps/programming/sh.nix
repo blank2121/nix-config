@@ -28,9 +28,17 @@ extra = ''
     export NIXPKGS_ALLOW_INSECURE=1
     export NIXPKGS_ALLOW_BROKEN=1
     export STARSHIP_CONFIG=$HOME/nixcfg/dotfiles/starship.toml
-    eval "$(starship init zsh)"
     export NIXPKGS_ALLOW_UNFREE=1
+
+    # starship + zoxide setup
+    eval "$(starship init zsh)"
     eval "$(zoxide init zsh)"
+    
+    # carapace setup
+    export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+    zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+    source <(carapace _carapace)
+
     ${pkgs.nitch}/bin/nitch 
 '';
 

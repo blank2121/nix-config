@@ -61,7 +61,6 @@ in {
             which
             
             cargo
-            rustup
             clippy
             rustfmt
             rust-analyzer

@@ -32,6 +32,8 @@ in {
                     diff-formatter = "${pkgs.delta}/bin/delta";
                 };
                 merge-tools.delta.diff-args = ["$left" "$right"];
+                user.name = "winston";
+                user.email = "winstonwalter07@gmail.com";
 
                 snapshot.max-new-file-size = "10MiB";
             };

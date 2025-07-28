@@ -31,7 +31,7 @@
         apps = {
             # TODO: add the architipes below
             programming.enable = true;
-            programming.copyparty = true;
+            programming.copyparty.enable = true;
             # gaming.enable = false;
 
             discord.enable = true;
