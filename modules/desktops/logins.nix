@@ -16,8 +16,8 @@ in {
 
   config = {
     services.displayManager.ly.enable = cfg.ly.enable;
-    services.displayManager.sddm = {
-      enable = cfg.sddm.enable;
+    services.displayManager.sddm = mkIf cfg.sddm.enable {
+      enable = true; 
       wayland.enable = true;
       enableHidpi = true;
     };

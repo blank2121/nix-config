@@ -11,5 +11,9 @@ in {
 
     config = mkIf cfg.enable {
         home-manager.users.${username}.home.packages = [ pkgs.copyparty ];
+        networking.firewall = {
+            enable = true;
+            allowedTCPPorts = [ 22 3923 ];
+        };
     };
 }

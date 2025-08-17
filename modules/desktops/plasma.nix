@@ -12,10 +12,10 @@ let
     cfg = config.my.desktops.plasma;
 in {
   options = {
-    my.desktops.plasma.enable = lib.mkEnableOption "plasma";
+    my.desktops.plasma.enable = mkEnableOption "plasma";
   };
 
-  config = {
+  config = mkIf cfg.enable {
     services.xserver.enable = true;
 
     # Enable the KDE Plasma Desktop Environment.

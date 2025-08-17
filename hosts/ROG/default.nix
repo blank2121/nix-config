@@ -12,10 +12,13 @@
             networking.enable = true;
             printing.enable = true;
             audio.enable = true;
+
+            boot.grub = false;
         };   
 
         desktops = {
             login.ly.enable = true;
+            login.sddm.enable = false;
             niri.enable = true;
 	        hyprland.enable = false;
 
@@ -29,11 +32,12 @@
         };
 
         apps = {
-            # TODO: add the architipes below
             programming.enable = true;
             programming.copyparty.enable = true;
-            # gaming.enable = false;
 
+            # gaming.{option}.enable = false;
+
+            anki.enable = true;
             discord.enable = true;
             email.enable = true;
             godot.enable = true;
@@ -42,7 +46,7 @@
             mpv.enable = true;
             obsidian.enable = true;
             photo.enable = true;
-            spotify.enable = true;
+            spotify.enable = false;
             terminal.enable = true;
             zen.enable = true;
             zoom.enable = true;

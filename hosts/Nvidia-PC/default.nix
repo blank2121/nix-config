@@ -10,22 +10,13 @@
             printing.enable = true;
             audio.enable = true;
             ssh.enable = true;
+
+            boot.grub = true;
         };   
 
         desktops = {
-	        # login.ly.enable = false;
-	        # niri.enable = false;
-	        # hyprland.enable = false;
-
             plasma.enable = true;
 
-            # extras = {
-            #     swaylock.enable = false;
-            #     swaync.enable = false;
-            #     waybar.enable = false;
-            #     wlogout.enable = false;
-            #     xremap.enable = false;
-            # };
         };
 
         apps = {

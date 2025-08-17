@@ -21,7 +21,7 @@ in {
               settings = {
                   editor = {
                       line-number = "relative";
-                      evil = "true";
+                      evil = true;
                   };
                   keys.normal = {
                       space.space = "file_picker";

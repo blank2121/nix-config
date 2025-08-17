@@ -1,6 +1,7 @@
 { ... }:
 {
     imports = [
+        ./anki.nix
         ./discord.nix
         ./email.nix
         ./gaming
