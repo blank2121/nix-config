@@ -6,6 +6,6 @@
         ./styles
         ./system
         ./user
-        # TODO: make attributes ./attributes
+        # TODO: ./architypes
     ];
 }

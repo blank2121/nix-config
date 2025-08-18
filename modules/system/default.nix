@@ -2,11 +2,12 @@
 {
     imports = [
         ./audio
-        ./boot
         ./bluetooth
+        ./boot
         ./networking
         ./nix
         ./printer
+        ./ssh
         ./timeZone
     ];
 }

@@ -6,7 +6,6 @@
 }:
 
 with lib;
-
 let
   coffeeOG = {
     base00 = "#160f0a";
@@ -137,6 +136,6 @@ in {
     };
 
     # weird qt error even tho qt is not used at all
-    stylix.targets.qt.platform = "qtct";
+    # stylix.targets.qt.platform = "qtct";
   };
 }

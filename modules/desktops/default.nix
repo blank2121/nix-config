@@ -5,5 +5,6 @@
         ./hyprland.nix
         ./logins.nix
         ./components
+        ./plasma.nix
     ];
 }

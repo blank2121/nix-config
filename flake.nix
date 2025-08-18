@@ -10,12 +10,10 @@
                 nix.package = pkgs.nixVersions.unstable;
                 nix.settings.experimental-features = "nix-command flakes";
                 overlays = [
-                    niri.overlays.niri polymc.overlay copyparty.overlays.default
+                    niri.overlays.niri copyparty.overlays.default
                 ];
             }; 
         globalModules = [ 
-            copyparty.nixosModules.default
-            niri.nixosModules.niri
             stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
@@ -34,6 +32,19 @@
                 modules = [
                     ./hosts/ROG
                     nixos-hardware.nixosModules.asus-zephyrus-ga402x-amdgpu
+                    copyparty.nixosModules.default
+                    niri.nixosModules.niri
+                ] ++ globalModules;
+            };
+
+            Nvidia-PC = nixpkgs.lib.nixosSystem {
+                pkgs = (pkgs "x86_64-linux");
+                specialArgs = { inherit inputs; 
+                                username = "winston"; 
+                                hostname = "Nvidia-PC"; };
+
+                modules = [
+                    ./hosts/Nvidia-PC
                 ] ++ globalModules;
             };
         };

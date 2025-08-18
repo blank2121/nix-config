@@ -3,6 +3,7 @@
     imports = [
         ./discord.nix
         ./email.nix
+        ./gaming
         ./godot.nix
         ./krita.nix
         ./libre.nix
@@ -10,7 +11,6 @@
         ./obsidian.nix
         ./photo.nix
         ./programming
-        # ./gaming
         ./spotify.nix
         ./terminal.nix
         ./zen.nix

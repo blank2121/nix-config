@@ -4,7 +4,7 @@ with lib;
 
 {
     boot.loader = {
-        systemd-boot.enable = true;
+        grub.enable = true;
         efi.canTouchEfiVariables = true;
     };
 }
