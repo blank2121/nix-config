@@ -13,7 +13,7 @@
             printing.enable = true;
             audio.enable = true;
 
-            boot.grub = false;
+            boot.grub.enable = false;
         };   
 
         desktops = {

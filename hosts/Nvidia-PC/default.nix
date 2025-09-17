@@ -11,7 +11,7 @@
             audio.enable = true;
             ssh.enable = true;
 
-            boot.grub = true;
+            boot.grub.enable = true;
         };   
 
         desktops = {
