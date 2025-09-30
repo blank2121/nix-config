@@ -21,12 +21,10 @@ in {
               settings = {
                   editor = {
                       line-number = "relative";
-                      evil = true;
+                      evil = false;
                   };
                   keys.normal = {
                       space.space = "file_picker";
-                      space.w = ":w";
-                      space.q = ":q";
                       esc = [
                           "collapse_selection"
                           "keep_primary_selection"
