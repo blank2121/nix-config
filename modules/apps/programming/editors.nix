@@ -17,11 +17,9 @@ in {
           # helix config
           programs.helix = {
               enable = true; 
-              package = pkgs.evil-helix;
               settings = {
                   editor = {
                       line-number = "relative";
-                      evil = false;
                   };
                   keys.normal = {
                       space.space = "file_picker";

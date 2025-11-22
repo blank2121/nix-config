@@ -56,6 +56,8 @@ in {
             ripgrep-all
             texliveFull
             trash-cli
+            typst
+            typst-live
             vim
             wget
             which
@@ -65,6 +67,14 @@ in {
             rustfmt
             rust-analyzer
             rustc
+
+            # lsp servers
+            nil
+            svelte-language-server
+            vscode
+            superhtml
+            vscode-css-languageserver
+            typescript-language-server
           ];
         };
     };
